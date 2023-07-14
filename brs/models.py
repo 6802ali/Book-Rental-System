@@ -3,8 +3,9 @@ from django.db import models
 class Author(models.Model):
     author_name = models.CharField(max_length=50)
 
-# class Occupation(models.Model):
-#     Occupation_description = models.CharField(max_length=20)
+# class Role(models.Model):
+#     Role_description = models.CharField(max_length=20)
+
 
 class Payment(models.Model):
     payment_id = models.IntegerField(primary_key=True)
@@ -17,11 +18,11 @@ class Payment(models.Model):
 #     email = models.CharField(max_length=50)
 #     password = models.CharField(max_length=100)
 
-# class Book(models.Model):
-#     Author = models.ForeignKey(Author, on_delete=models.CASCADE)
-#     book_id = models.IntegerField()
-#     book_name = models.CharField(max_length=100)
-#     book_type = models.CharField(max_length=50)
+class Book(models.Model):
+    Author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    book_id = models.IntegerField(primary_key=True)
+    book_name = models.CharField(max_length=100)
+    book_type = models.CharField(max_length=50)
     
 # class Offer(models.Model):
 #     offer_id = models.IntegerField()
