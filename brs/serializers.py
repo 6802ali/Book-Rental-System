@@ -6,6 +6,16 @@ class AuthorSerializer(serializers.ModelSerializer):
         model = Author
         fields = '__all__'
 
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = '__all__'
+
+# class OccupationSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Occupation
+#         fields = '__all__'
+
 # class BookGetSerializer(serializers.ModelSerializer):
 #     Author = AuthorSerializer()
     
@@ -20,10 +30,7 @@ class AuthorSerializer(serializers.ModelSerializer):
 #         model = Book
 #         fields = '__all__'
         
-# class RoleSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Role
-#         fields = '__all__'
+
 
 # class UserGetSerializer(serializers.ModelSerializer):
 #     role= RoleSerializer()
@@ -59,10 +66,7 @@ class AuthorSerializer(serializers.ModelSerializer):
 #         model = Librarian
 #         fields = '__all__'
 
-# class PaymentSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Payment
-#         fields = '__all__'
+
 
 # class OrderSerializer(serializers.ModelSerializer):
 #     payment = PaymentSerializer(many=True, read_only=True)
