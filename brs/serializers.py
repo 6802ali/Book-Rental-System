@@ -11,24 +11,26 @@ class PaymentSerializer(serializers.ModelSerializer):
         model = Payment
         fields = '__all__'
 
-# class OccupationSerializer(serializers.ModelSerializer):
+# class RoleSerializer(serializers.ModelSerializer):
 #     class Meta:
-#         model = Occupation
+#         model = Role
 #         fields = '__all__'
 
-# class BookGetSerializer(serializers.ModelSerializer):
-#     Author = AuthorSerializer()
+
+
+class BookGetSerializer(serializers.ModelSerializer):
+    Author = AuthorSerializer()
     
-#     class Meta:
-#         model = Book
-#         fields = '__all__'        
+    class Meta:
+        model = Book
+        fields = '__all__'        
 
-# class BookSerializer(serializers.ModelSerializer):
-#     Author = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all())
+class BookSerializer(serializers.ModelSerializer):
+    Author = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all())
 
-#     class Meta:
-#         model = Book
-#         fields = '__all__'
+    class Meta:
+        model = Book
+        fields = '__all__'
         
 
 

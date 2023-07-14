@@ -10,17 +10,19 @@ class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
 
-# class OccupationViewSet(viewsets.ModelViewSet):
-#     queryset = Occupation.objects.all()
+
+
+# class RoleViewSet(viewsets.ModelViewSet):
+#     queryset = Role.objects.all()
 #     serializer_class = OccupationSerializer
 
-# class BookViewSet(viewsets.ModelViewSet):
-#     queryset = Book.objects.all()
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
     
-#     def get_serializer_class(self):
-#         if self.action == 'list' or self.action == 'retrieve':
-#             return BookGetSerializer
-#         return BookSerializer
+    def get_serializer_class(self):
+        if self.action == 'list' or self.action == 'retrieve':
+            return BookGetSerializer
+        return BookSerializer
 
 # class OfferViewSet(viewsets.ModelViewSet):
 #     queryset = Offer.objects.all()
