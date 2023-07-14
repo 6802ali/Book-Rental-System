@@ -21,7 +21,8 @@ from .views import *
 
 router = routers.DefaultRouter()
 router.register(r'authors', AuthorViewSet)
-
+router.register(r'payment', PaymentViewSet)
+# router.register(r'Occupation', OccupationViewSet)
 
 
 

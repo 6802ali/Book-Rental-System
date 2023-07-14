@@ -3,9 +3,12 @@ from django.db import models
 class Author(models.Model):
     author_name = models.CharField(max_length=50)
 
-# class Role(models.Model):
-#     role_id = models.IntegerField(default=0)
-#     role_title = models.CharField(max_length=15)
+# class Occupation(models.Model):
+#     Occupation_description = models.CharField(max_length=20)
+
+class Payment(models.Model):
+    payment_id = models.IntegerField(primary_key=True)
+    payment_method = models.CharField(max_length=50)
 
 # class User(models.Model):
 #     user_id = models.IntegerField(primary_key=True)
@@ -24,9 +27,7 @@ class Author(models.Model):
 #     offer_id = models.IntegerField()
 #     book = models.OneToOneField(Book, on_delete=models.CASCADE)      
     
-# class Payment(models.Model):
-#     payment_id = models.IntegerField(default=0)
-#     payment_method = models.CharField(max_length=10)
+
 
 # class Order(models.Model):
 #     order_id = models.IntegerField()
