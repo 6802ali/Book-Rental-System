@@ -31,8 +31,20 @@ class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
         fields = '__all__'
-        
 
+class OfferGetSerializer(serializers.ModelSerializer):
+    book = BookSerializer()
+
+    class Meta:
+        model = Offer
+        fields = '__all__'
+        
+class OfferSerializer(serializers.ModelSerializer):
+    book = serializers.PrimaryKeyRelatedField(queryset=Book.objects.all())
+
+    class Meta:
+        model = Offer
+        fields = '__all__'
 
 # class UserGetSerializer(serializers.ModelSerializer):
 #     role= RoleSerializer()
@@ -48,19 +60,8 @@ class BookSerializer(serializers.ModelSerializer):
 #         model = User
 #         fields = '__all__'
 
-# class OfferGetSerializer(serializers.ModelSerializer):
-#     book = BookSerializer()
 
-#     class Meta:
-#         model = Offer
-#         fields = '__all__'
 
-# class OfferSerializer(serializers.ModelSerializer):
-#     book = serializers.PrimaryKeyRelatedField(queryset=Book.objects.all())
-
-#     class Meta:
-#         model = Offer
-#         fields = '__all__'
 
 # class LibrarianSerializer(UserSerializer):
 #     offers = OfferSerializer(many=True, read_only=True)

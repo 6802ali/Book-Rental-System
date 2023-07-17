@@ -24,13 +24,14 @@ class BookViewSet(viewsets.ModelViewSet):
             return BookGetSerializer
         return BookSerializer
 
-# class OfferViewSet(viewsets.ModelViewSet):
-#     queryset = Offer.objects.all()
-
-#     def get_serializer_class(self):
-#         if self.action == 'list' or self.action == 'retrieve':
-#             return OfferGetSerializer
-#         return OfferSerializer
+class OfferViewSet(viewsets.ModelViewSet):
+    queryset = Offer.objects.all()
+    serializer_class = OfferSerializer
+    
+    # def get_serializer_class(self):
+    #     if self.action == 'list' or self.action == 'retrieve':
+    #         return OfferGetSerializer
+    #     return OfferSerializer
 
 # class OrderViewSet(viewsets.ModelViewSet):
 #     queryset = Order.objects.all()

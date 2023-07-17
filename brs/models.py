@@ -24,9 +24,10 @@ class Book(models.Model):
     book_name = models.CharField(max_length=100)
     book_type = models.CharField(max_length=50)
     
-# class Offer(models.Model):
-#     offer_id = models.IntegerField()
-#     book = models.OneToOneField(Book, on_delete=models.CASCADE)      
+class Offer(models.Model):
+    offer_id = models.IntegerField(primary_key=True) 
+    # offer_percentage = models.IntegerField(default=0) # when i add this attribute and migrate "no such column: brs_offer.offer_percentage,"
+    book = models.OneToOneField(Book, on_delete=models.CASCADE)      
     
 
 
