@@ -10,11 +10,9 @@ class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
 
-
-
-# class RoleViewSet(viewsets.ModelViewSet):
-#     queryset = Role.objects.all()
-#     serializer_class = OccupationSerializer
+class RoleViewSet(viewsets.ModelViewSet):
+    queryset = Role.objects.all()
+    serializer_class = RoleSerializer
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
