@@ -11,11 +11,10 @@ class PaymentSerializer(serializers.ModelSerializer):
         model = Payment
         fields = '__all__'
 
-# class RoleSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Role
-#         fields = '__all__'
-
+class RoleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Role
+        fields = '__all__'
 
 
 class BookGetSerializer(serializers.ModelSerializer):
@@ -59,16 +58,6 @@ class OfferSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = User
 #         fields = '__all__'
-
-
-
-
-# class LibrarianSerializer(UserSerializer):
-#     offers = OfferSerializer(many=True, read_only=True)
-#     class Meta:
-#         model = Librarian
-#         fields = '__all__'
-
 
 
 # class OrderSerializer(serializers.ModelSerializer):

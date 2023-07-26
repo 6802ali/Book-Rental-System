@@ -3,9 +3,8 @@ from django.db import models
 class Author(models.Model):
     author_name = models.CharField(max_length=50)
 
-# class Role(models.Model):
-#     Role_description = models.CharField(max_length=20)
-
+class Role(models.Model):
+    Role_name = models.CharField(max_length=20)
 
 class Payment(models.Model):
     payment_id = models.IntegerField(primary_key=True)
