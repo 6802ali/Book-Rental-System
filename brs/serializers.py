@@ -45,39 +45,19 @@ class OfferSerializer(serializers.ModelSerializer):
         model = Offer
         fields = '__all__'
 
-# class UserGetSerializer(serializers.ModelSerializer):
-#     role= RoleSerializer()
+class UserGetSerializer(serializers.ModelSerializer):
+    role= RoleSerializer()
 
-#     class Meta:
-#         model = User
-#         fields = '__all__'
+    class Meta:
+        model = User
+        fields = '__all__'
 
-# class UserSerializer(serializers.ModelSerializer):
-#     role = serializers.PrimaryKeyRelatedField(queryset=Role.objects.all())
+class UserSerializer(serializers.ModelSerializer):
+    role = serializers.PrimaryKeyRelatedField(queryset=Role.objects.all())
 
-#     class Meta:
-#         model = User
-#         fields = '__all__'
+    class Meta:
+        model = User
+        fields = '__all__'
 
 
-# class OrderSerializer(serializers.ModelSerializer):
-#     payment = PaymentSerializer(many=True, read_only=True)
-#     librarian = LibrarianSerializer(many=True, read_only=True)
-#     book = BookSerializer(many=True, read_only=True)
-#     class Meta:
-#         model = Order
-#         fields = '__all__'
-
-# class CustomerSerializer(UserSerializer):
-#     payment = PaymentSerializer(many=True, read_only=True)
-#     order = OrderSerializer(many=True, read_only=True)
-#     class Meta:
-#         model = Customer
-#         fields = '__all__'
-    
-# class CartSerializer(serializers.ModelSerializer):
-#     order = OrderSerializer(many=True, read_only=True)
-#     class Meta:
-#         model = Cart
-#         fields = '__all__'
 
