@@ -25,7 +25,7 @@ router.register(r'payment', PaymentViewSet)
 router.register(r'books', BookViewSet)
 router.register(r'offer', OfferViewSet)
 router.register(r'role', RoleViewSet)
-
+router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),

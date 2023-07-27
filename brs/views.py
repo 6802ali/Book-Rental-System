@@ -26,6 +26,15 @@ class OfferViewSet(viewsets.ModelViewSet):
     queryset = Offer.objects.all()
     serializer_class = OfferSerializer
     
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    # def get_serializer_class(self):
+    #     if self.action == 'list' or self.action == 'retrieve':
+    #         return UserGetSerializer
+    #     return UserSerializer
+
+
     # def get_serializer_class(self):
     #     if self.action == 'list' or self.action == 'retrieve':
     #         return OfferGetSerializer
@@ -38,22 +47,3 @@ class OfferViewSet(viewsets.ModelViewSet):
 # class CartViewSet(viewsets.ModelViewSet):
 #     queryset = Cart.objects.all()
 #     serializer_class = CartSerializer
-
-
-
-# class UserViewSet(viewsets.ModelViewSet):
-#     queryset = User.objects.all()
-
-#     def get_serializer_class(self):
-#         if self.action == 'list' or self.action == 'retrieve':
-#             return UserGetSerializer
-#         return UserSerializer
-
-# class CustomerViewSet(viewsets.ModelViewSet):
-#     queryset = Customer.objects.all()
-#     serializer_class = CustomerSerializer
-
-# class LibrarianViewSet(viewsets.ModelViewSet):
-#     queryset = Librarian.objects.all()
-#     serializer_class = LibrarianSerializer
-
