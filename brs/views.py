@@ -1,6 +1,15 @@
 from .models import *
 from .serializers import * 
 from rest_framework import viewsets
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+
+from rest_framework_simplejwt.views import TokenObtainPairView
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
 
 class AuthorViewSet(viewsets.ModelViewSet):
     queryset = Author.objects.all()
@@ -29,21 +38,11 @@ class OfferViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    # def get_serializer_class(self):
-    #     if self.action == 'list' or self.action == 'retrieve':
-    #         return UserGetSerializer
-    #     return UserSerializer
 
-
-    # def get_serializer_class(self):
-    #     if self.action == 'list' or self.action == 'retrieve':
-    #         return OfferGetSerializer
-    #     return OfferSerializer
-
-# class OrderViewSet(viewsets.ModelViewSet):
-#     queryset = Order.objects.all()
-#     serializer_class = OrderSerializer
-
-# class CartViewSet(viewsets.ModelViewSet):
-#     queryset = Cart.objects.all()
-#     serializer_class = CartSerializer
+@api_view(['GET'])
+def getRoutes(request):
+    routes = [
+        'api/token/',
+        'api/token/refresh/'
+    ]
+    return Response(routes)
